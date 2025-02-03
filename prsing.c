@@ -67,10 +67,12 @@ char **join_and_splited(char **args)
 	int j;
 
 	i = 1;
+	joined = NULL;
 	while (args[i])
 	{
 		if (args[i][0] == '\0')
 			(ft_putstr_fd("ERROR", 2), exit(1));
+		
 		joined = ft_strjoin(joined, " ");
 		joined = ft_strjoin(joined, args[i]);
 		i++;
@@ -79,12 +81,14 @@ char **join_and_splited(char **args)
 	free(joined);
 	return (splited);
 }
-void parsing(char **args)
+
+t_stack *parsing(char **args)
 {
 	long *array;
 	char **numbres;
 	int len;
 	int i;
+	t_stack *a;
 
 	numbres = join_and_splited(args);
 	len = 0;
@@ -95,20 +99,7 @@ void parsing(char **args)
 	free_while(numbres);
 	if (check_numbers(array, len) == 1)
 		(free(array), ft_putstr_fd("ERROR", 2), exit(1));
-	while(i < len)
-	{
-		printf("--%ld--\n",array[i]);
-		i++;
-	}
-	
+	a = fill_stack(array, len);
+	return (a);
 }
-int main(int argc, char *args[])
-{
-	if(argc == 1)
-		return (1);
-	parsing(args);
-	return(0);
-}
-// ./push_swap ""
-//./push_swap "333"3 --> 3333
-// 
+
