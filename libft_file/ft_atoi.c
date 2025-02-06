@@ -6,11 +6,11 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:08:53 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/01/30 16:11:50 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/06 16:31:18 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 static const char	*sikpit(const char *str, int *sing)
 {

@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 20:05:31 by zel-yama          #+#    #+#             */
-/*   Updated: 2024/11/07 12:17:37 by zel-yama         ###   ########.fr       */
+/*   Created: 2024/10/22 15:21:28 by zel-yama          #+#    #+#             */
+/*   Updated: 2025/02/06 16:32:26 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-char	*ft_strdup(const char *s1)
+size_t	ft_strlen(const char *s)
 {
-	char	*newstr;
-	int		i;
+	size_t	i;
 
 	i = 0;
-	while (s1[i])
+	while (s[i] != '\0')
 	{
 		i++;
 	}
-	newstr = (char *)malloc(sizeof(char) * (i + 1));
-	if (!newstr)
-		return (NULL);
-	i = 0;
-	while (s1[i])
-	{
-		newstr[i] = s1[i];
-		i++;
-	}
-	newstr[i] = '\0';
-	return (newstr);
+	return (i);
 }

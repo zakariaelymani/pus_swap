@@ -6,11 +6,11 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:24:45 by zel-yama          #+#    #+#             */
-/*   Updated: 2024/11/12 12:39:02 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/06 16:31:44 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 static char	**freplaces(unsigned long seats, char **s)
 {

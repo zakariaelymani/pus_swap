@@ -1,3 +1,6 @@
+
+
+
 #include "push_swap.h"
 
 void ss_rules(t_stack **a, t_stack **b)

@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 15:21:28 by zel-yama          #+#    #+#             */
-/*   Updated: 2024/11/07 12:05:09 by zel-yama         ###   ########.fr       */
+/*   Created: 2024/10/29 14:44:39 by zel-yama          #+#    #+#             */
+/*   Updated: 2025/02/06 16:31:33 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (!s || fd < 0)
+		return ;
+	while (s[i])
 	{
+		write(fd, &s[i], 1);
 		i++;
 	}
-	return (i);
 }

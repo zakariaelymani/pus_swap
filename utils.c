@@ -1,5 +1,5 @@
 #include "push_swap.h"
-
+// free stack and i should put the null and tath stack 
 void free_stack(t_stack *head)
 {
 	t_stack *tmp;
@@ -12,7 +12,7 @@ void free_stack(t_stack *head)
 	}
 	
 }
-
+//create node  and i sould 
 t_stack *new_node(int content)
 {
 	t_stack *node;
@@ -24,6 +24,7 @@ t_stack *new_node(int content)
 	node->next = NULL;
 	return(node); 
 }
+//fill the stack with i should protect that from the null 
 t_stack *fill_stack(long *array, int len)
 {
 	t_stack *a;
@@ -43,4 +44,51 @@ t_stack *fill_stack(long *array, int len)
 		i++;
 	}
 	return (tmp);
+}
+long *sort_array(long *array, int len)
+{
+	int		i;
+	int		j;
+	long	tmp;
+
+	i = 0;
+	while (i < len)
+	{
+		j = 0;
+		while (j < len)
+		{
+			if (array[i] < array[j])
+			{
+				tmp = array[i];
+				array[i] = array[j];
+				array[j] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (array);
+}
+
+t_stack	*fill_index(long *array, t_stack *a, int len)
+{
+	int		j;
+	t_stack *tmp;
+
+	j = 0;
+	array = sort_array(array, len);
+	while (j < len)
+	{
+		tmp = a;
+		while (tmp)
+		{
+			if (array[j] == tmp->data)
+			{
+				tmp->index = j;
+			}
+			tmp = tmp->next;
+		}
+		j++;	
+	}
+	return (a);
 }

@@ -1,3 +1,6 @@
+
+
+
 #include "push_swap.h"
 
 void free_while(char **matrix)
@@ -41,7 +44,7 @@ int check_numbers(long *array, int len)
 	return (0);	
 }
 
-long *fill_array(char **splited, int len)
+long	*fill_array(char **splited, int len)
 {
 	int i;
 	long *array;
@@ -64,7 +67,6 @@ char **join_and_splited(char **args)
 	char *joined;
 	char **splited;
 	int	i;
-	int j;
 
 	i = 1;
 	joined = NULL;
@@ -100,6 +102,7 @@ t_stack *parsing(char **args)
 	if (check_numbers(array, len) == 1)
 		(free(array), ft_putstr_fd("ERROR", 2), exit(1));
 	a = fill_stack(array, len);
+	a = fill_index(array, a, len);
 	return (a);
 }
 

@@ -6,11 +6,11 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 09:58:50 by zel-yama          #+#    #+#             */
-/*   Updated: 2024/11/14 15:22:40 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/06 16:32:01 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 static char	*copin(char *str, const char *s1, const char *s2)
 {
