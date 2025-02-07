@@ -15,11 +15,11 @@ HEADER = push_swap.h
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJFILES)
 	$(cc) $(FALGS) $(OBJFILES) -o $(NAME)
 
 clean: 
-	rm -rf **/**.o
+	rm -rf $(OBJFILES)
 
 fclean: clean
 	rm -rf $(NAME)

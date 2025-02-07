@@ -35,7 +35,7 @@ t_stack	*fill_index(long *array, t_stack *a, int len);
 int		stack_size(t_stack *stack_tocount);
 t_stack	*mark_position(t_stack *stack);
 int		find_max(t_stack *b, int *position);
-void	fillstack_b(t_stack **a, t_stack **b);
+void	fillstack_b(t_stack **a, t_stack **b, int i, int x);
 void	sort_stack_a(t_stack **a, t_stack **b);
 size_t	ft_strlen(const char *s);
 long	ft_atoi(const char	*str);
@@ -45,5 +45,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s1);
 char	**ft_split(char const *s, char c);
 int		ft_isdigit(int c);
+void	free_stack(t_stack *head);
 
 #endif

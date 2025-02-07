@@ -93,21 +93,16 @@ t_stack *parsing(char **args)
 	t_stack *a;
 
 	numbres = join_and_splited(args);
-	(1) && (len = 0, i = 0);
+	len = 0;
 	while (numbres[len])
 		len++;
 	array = fill_array(numbres, len);
+	i = 0;
 	free_while(numbres);
-	if (!array)
-		return (NULL);
 	if (check_numbers(array, len) == 1)
 		(free(array), ft_putstr_fd("ERROR", 2), exit(1));
 	a = fill_stack(array, len);
-	if (!a)
-		return (free(array), NULL);
 	a = fill_index(array, a, len);
-	free(array);
-	array = NULL;
 	return (a);
 }
 

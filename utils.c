@@ -1,3 +1,5 @@
+
+
 #include "push_swap.h"
 // free stack and i should put the null and tath stack 
 void free_stack(t_stack *head)
@@ -9,8 +11,8 @@ void free_stack(t_stack *head)
 		tmp = head;
 		head = head->next;
 		free(tmp);
+		tmp  = NULL;
 	}
-	
 }
 //create node  and i sould 
 t_stack *new_node(int content)
@@ -33,6 +35,8 @@ t_stack *fill_stack(long *array, int len)
 
 	
 	a = new_node((int)array[0]);
+	if (!a)
+		return (NULL);
 	i = 1;
 	tmp = a;
 	while(i < len)
