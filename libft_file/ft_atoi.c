@@ -6,7 +6,7 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 21:08:53 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/06 16:31:18 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/08 22:37:12 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ long	ft_atoi(const char	*str)
 		return (21474836478);
 	while (str[i])
 	{
-		if(ft_isdigit(str[i]) == 0)
+		if (ft_isdigit(str[i]) == 0)
 			return (21474836478);
 		res = res * 10 + (str[i] - '0');
 		if (temp > res && sing == 1)

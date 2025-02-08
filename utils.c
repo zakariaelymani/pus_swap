@@ -1,55 +1,65 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/07 18:09:57 by zel-yama          #+#    #+#             */
+/*   Updated: 2025/02/08 22:42:37 by zel-yama         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
-// free stack and i should put the null and tath stack 
-void free_stack(t_stack *head)
-{
-	t_stack *tmp;
 
-	while(head)
+void	free_stack(t_stack *head)
+{
+	t_stack	*tmp;
+
+	while (head)
 	{
 		tmp = head;
 		head = head->next;
 		free(tmp);
-		tmp  = NULL;
+		tmp = NULL;
 	}
 }
-//create node  and i sould 
-t_stack *new_node(int content)
+
+t_stack	*new_node(int content)
 {
-	t_stack *node;
+	t_stack	*node;
 
 	node = (t_stack *)malloc(sizeof(t_stack));
-	if(!node)
+	if (!node)
 		return (NULL);
 	node->data = content;
 	node->next = NULL;
-	return(node); 
+	return (node);
 }
-//fill the stack with i should protect that from the null 
-t_stack *fill_stack(long *array, int len)
-{
-	t_stack *a;
-	t_stack *tmp;
-	int i;
 
-	
+t_stack	*fill_stack(long *array, int len)
+{
+	t_stack	*a;
+	t_stack	*tmp;
+	int		i;
+
 	a = new_node((int)array[0]);
 	if (!a)
 		return (NULL);
 	i = 1;
 	tmp = a;
-	while(i < len)
+	while (i < len)
 	{
 		a->next = new_node((int)array[i]);
-		if(!a->next)
-			return(NULL);
+		if (!a->next)
+			return (NULL);
 		a = a->next;
 		i++;
 	}
 	return (tmp);
 }
-long *sort_array(long *array, int len)
+
+long	*sort_array(long *array, int len)
 {
 	int		i;
 	int		j;
@@ -77,7 +87,7 @@ long *sort_array(long *array, int len)
 t_stack	*fill_index(long *array, t_stack *a, int len)
 {
 	int		j;
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	j = 0;
 	array = sort_array(array, len);
@@ -92,7 +102,7 @@ t_stack	*fill_index(long *array, t_stack *a, int len)
 			}
 			tmp = tmp->next;
 		}
-		j++;	
+		j++;
 	}
 	return (a);
 }

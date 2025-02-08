@@ -1,19 +1,29 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/07 18:09:38 by zel-yama          #+#    #+#             */
+/*   Updated: 2025/02/08 20:37:39 by zel-yama         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include "stdio.h"
-#include "unistd.h"
-#include "stdlib.h"
+# include "stdio.h"
+# include "unistd.h"
+# include "stdlib.h"
 
 typedef struct s_stack
 {
 	int				index;
 	int				postion;
 	int				data;
-	struct s_stack 	*next;
-} t_stack;
+	struct s_stack	*next;
+}	t_stack;
 
 void	swap_b(t_stack **b);
 void	push_a(t_stack **a, t_stack **b);

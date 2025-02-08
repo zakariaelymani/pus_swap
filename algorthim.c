@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algorthim.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/07 18:08:53 by zel-yama          #+#    #+#             */
+/*   Updated: 2025/02/08 22:46:17 by zel-yama         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int check_disending(t_stack *a)
+int	check_disending(t_stack *a)
 {
-	int count;
-	t_stack *tmp;
-	int size;
-	
+	int		count;
+	t_stack	*tmp;
+	int		size;
+
 	tmp = a;
 	count = 0;
 	size = stack_size(tmp);
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->next && tmp->data > tmp->next->data)
 			count++;
@@ -20,21 +32,22 @@ int check_disending(t_stack *a)
 	else
 		return (1);
 }
-int  check_x(int x, t_stack *a)
+
+int	check_x(int x, t_stack *a)
 {
-	int size;
+	int	size;
 
 	size = stack_size(a);
 	if (size <= 100)
 		x = 16;
-	else	
+	else
 		x = 32;
 	return (x);
 }
 
-void fillstack_b(t_stack **a, t_stack **b, int i, int x)
+void	fillstack_b(t_stack **a, t_stack **b, int i, int x)
 {
-	int cas;
+	int	cas;
 
 	x = check_x(x, *a);
 	while ((*a))
@@ -54,22 +67,17 @@ void fillstack_b(t_stack **a, t_stack **b, int i, int x)
 			cas = check_disending(*a);
 			if (cas == 0)
 				reverse_a(a);
-			else 
+			else
 				rotate_a(a);
-		}	
+		}
 	}
 }
 
-/*find max index place to known to put it in stack first and mark position to decide if you will  reverse to reach it 
-or you rotate and rotate to reach if you find put in top stack and push it so 
-to known it is he on top or the bottom divide the size by two and compare it by position if greater than he is in heigher part else he is lower part 
-
-*/
-void sort_stack_a(t_stack **a, t_stack **b)
+void	sort_stack_a(t_stack **a, t_stack **b)
 {
 	int	size;
 	int	maxindex;
-	int maxposition;
+	int	maxposition;
 
 	while ((*b))
 	{
@@ -77,16 +85,16 @@ void sort_stack_a(t_stack **a, t_stack **b)
 		maxindex = find_max(*b, &maxposition);
 		if (size == 1)
 			push_a(a, b);
-	  	else if (maxposition <= size/2)
+		else if (maxposition <= size / 2)
 		{
 			while (maxindex != (*b)->index)
 				rotate_b(b);
 			if (maxindex == (*b)->index)
 				push_a(a, b);
 		}
-		else if (maxposition >= size/2)
+		else if (maxposition >= size / 2)
 		{
-			while(maxindex != (*b)->index)
+			while (maxindex != (*b)->index)
 				reverse_b(b);
 			if (maxindex == (*b)->index)
 				push_a(a, b);
