@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/07 18:09:38 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/09 16:11:59 by zel-yama         ###   ########.fr       */
+/*   Created: 2025/02/09 10:06:05 by zel-yama          #+#    #+#             */
+/*   Updated: 2025/02/09 13:12:27 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_BONUS_H
+#define CHECKER_BONUS_H
 
-# include "unistd.h"
-# include "stdlib.h"
+#include "unistd.h"
+#include "stdlib.h"
 
 typedef struct s_stack
 {
@@ -35,17 +35,8 @@ void	rotate_a(t_stack **a);
 void	reverse_b(t_stack **b);
 void	reverse_a(t_stack **a);
 t_stack	*fill_stack(long *array, int len);
-void	sort_4element(t_stack **a, t_stack **b);
-void	sort3_element(t_stack **a);
 int		is_sorted(t_stack *stack);
-void	sort2_element(t_stack **a);
-void	sort_5elment(t_stack **a, t_stack **b);
-t_stack	*fill_index(long *array, t_stack *a, int len);
 int		stack_size(t_stack *stack_tocount);
-t_stack	*mark_position(t_stack *stack);
-int		find_max(t_stack *b, int *position);
-void	fillstack_b(t_stack **a, t_stack **b, int i, int x);
-void	sort_stack_a(t_stack **a, t_stack **b);
 size_t	ft_strlen(const char *s);
 long	ft_atoi(const char	*str);
 int		ft_isalpha(int c);
@@ -55,8 +46,11 @@ char	*ft_strdup(const char *s1);
 char	**ft_split(char const *s, char c);
 int		ft_isdigit(int c);
 void	free_stack(t_stack *head);
+char	*mini_get_line();
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ss_rules(t_stack **a, t_stack **b);
 void	rr_rules(t_stack **a, t_stack **b);
 void	rrr_rules(t_stack **a, t_stack **b);
-t_stack	*last_stack_b(t_stack *stack);
+t_stack	*fill_index(long *array, t_stack *a, int len);
+
 #endif

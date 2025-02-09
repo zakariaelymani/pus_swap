@@ -1,44 +1,70 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   commonrules.c                                      :+:      :+:    :+:   */
+/*   b_rules_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/07 18:09:16 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/09 16:12:29 by zel-yama         ###   ########.fr       */
+/*   Created: 2025/02/07 18:09:08 by zel-yama          #+#    #+#             */
+/*   Updated: 2025/02/09 14:29:11 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
-void	swap(t_stack **b)
+void	swap_b(t_stack **b)
 {
 	t_stack	*tmp;
 
 	if (!b || !(*b) || !(*b)->next)
 		return ;
-	
 	tmp = (*b)->next;
 	(*b)->next = tmp->next;
 	tmp->next = (*b);
 	(*b) = tmp;
 }
-void	rotate(t_stack **a)
+
+void	push_b(t_stack **b, t_stack **a)
+{
+	t_stack	*tmp;
+
+	if (!a || !(*a))
+		return ;
+	tmp = *a;
+	*a = (*a)->next;
+	tmp->next = *b;
+	(*b) = tmp;
+}
+
+t_stack	*last_stack_b(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	if (!stack)
+		return (NULL);
+	tmp = stack;
+	while (tmp && tmp->next)
+	{
+		tmp = tmp->next;
+	}
+	return (tmp);
+}
+
+void	rotate_b(t_stack **b)
 {
 	t_stack	*tmp;
 	t_stack	*last;
 
-	if (!a || !(*a) || !(*a)->next)
+	if (!b || !(*b) || !(*b)->next)
 		return ;
-	tmp = (*a);
-	(*a) = (*a)->next;
-	last = last_stack_b(*a);
+	tmp = (*b);
+	(*b) = (*b)->next;
+	last = last_stack_b(*b);
 	last->next = tmp;
 	tmp->next = NULL;
 }
 
-void	reverse(t_stack **b)
+void	reverse_b(t_stack **b)
 {
 	t_stack	*tmp;
 	t_stack	*beforelast;
@@ -55,25 +81,4 @@ void	reverse(t_stack **b)
 	beforelast->next = NULL;
 	last->next = (*b);
 	(*b) = last;
-}
-
-void	ss_rules(t_stack **a, t_stack **b)
-{
-	ft_putstr_fd("ss\n", 1);
-	swap(a);
-	swap(b);
-}
-
-void	rr_rules(t_stack **a, t_stack **b)
-{
-	ft_putstr_fd("rr\n", 1);
-	rotate(a);
-	rotate(b);
-}
-
-void	rrr_rules(t_stack **a, t_stack **b)
-{
-	ft_putstr_fd("rrr\n", 1);
-	reverse(a);
-	reverse(b);
 }

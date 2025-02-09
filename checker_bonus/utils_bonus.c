@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:09:57 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/09 12:32:57 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/09 12:41:14 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
 void	free_stack(t_stack *head)
 {
 	t_stack	*tmp;
 
+	if (!head)
+		return ;
 	while (head)
 	{
 		tmp = head;

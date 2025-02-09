@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prsing.c                                           :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:09:24 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/08 22:54:13 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/09 16:31:21 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,15 +75,19 @@ char	**join_and_splited(char **args)
 	char	*joined;
 	char	**splited;
 	int		i;
+	char	*tmp;
 
 	i = 1;
 	joined = NULL;
 	while (args[i])
 	{
+		free(joined);
 		if (args[i][0] == '\0')
-			(ft_putstr_fd("Error", 2), exit(1));
+			(ft_putstr_fd("Error\n", 2), exit(1));
 		joined = ft_strjoin(joined, " ");
+		tmp = joined;
 		joined = ft_strjoin(joined, args[i]);
+		free(tmp);
 		i++;
 	}
 	splited = ft_split(joined, ' ');
@@ -110,7 +114,7 @@ t_stack	*parsing(char **args)
 	if (!array)
 		return (NULL);
 	if (check_numbers(array, len) == 1)
-		(free(array), ft_putstr_fd("Error", 2), exit(1));
+		(free(array), ft_putstr_fd("Error\n", 2), exit(1));
 	a = fill_stack(array, len);
 	if (!a)
 		return (free(array), NULL);
