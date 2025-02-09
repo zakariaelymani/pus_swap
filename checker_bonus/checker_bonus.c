@@ -6,7 +6,7 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 10:40:26 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/09 18:50:44 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/09 21:21:36 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,10 @@ int	main(int argc, char **argv)
 		if (!*moves)
 			break ;
 		if (check_moves(moves, &a, &b) == 1)
-			(free(moves), free_stack(a), free_stack(b),
-				ft_putstr_fd("Error\n", 2), exit(1));
+			(free(moves), free_stack(a), free_stack(b), ft_putstr_fd("Error\n", 2), exit(1));
 		free(moves);
 	}
 	check_is_status(a, b);
 	(free(moves), free_stack(a), free(b));
+	return (0);
 }

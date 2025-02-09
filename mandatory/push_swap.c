@@ -6,7 +6,7 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/02/09 18:18:59 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/09 21:14:09 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int argc, char **argv)
 	(1) && (a = NULL, b = NULL, i = 0, x = 0);
 	a = parsing(argv);
 	if (is_sorted(a) == 0)
-		return (0);
+		return (free_stack(a), 0);
 	if (stack_size(a) <= 5)
 		function_calls(stack_size(a), &a, &b);
 	else
