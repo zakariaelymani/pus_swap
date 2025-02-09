@@ -1,13 +1,11 @@
 NAME = push_swap
 BONUS_PROGRAM = checker
-HEADER_BONUS = checker/checker_bonus.h
+HEADER_BONUS = checker/checker_bonus.h 
 FALGS = -Wall -Wextra -Werror 
 cc = cc
-FILES = parsing.c push_swap.c algorthim.c b_rules.c a_rules.c commonrules.c sortsmallnumber.c \
-utils.c utils1.c libft_file/ft_atoi.c\
- libft_file/ft_putstr_fd.c libft_file/ft_split.c\
-libft_file/ft_strjoin.c libft_file/ft_strlen.c  libft_file/ft_strdup.c libft_file/ft_isalpha.c \
-libft_file/ft_isdigit.c
+FILES = mandatory/a_rules.c mandatory/algorthim.c mandatory/b_rules.c mandatory/commonrules.c mandatory/parsing.c mandatory/push_swap.c  mandatory/sortsmallnumber.c mandatory/utils.c \
+mandatory/utils1.c mandatory/libft_file/ft_atoi.c mandatory/libft_file/ft_isalpha.c  mandatory/libft_file/ft_isdigit.c mandatory/libft_file/ft_putstr_fd.c mandatory/libft_file/ft_split.c \
+mandatory/libft_file/ft_strlen.c mandatory/libft_file/ft_strjoin.c mandatory/libft_file/ft_strdup.c 
 BONUS_FILES = checker_bonus/libft_file/ft_atoi_bonus.c checker_bonus/libft_file/ft_isalpha_bonus.c checker_bonus/libft_file/ft_isdigit_bonus.c checker_bonus/libft_file/ft_putstr_fd_bonus.c \
 checker_bonus/libft_file/ft_split_bonus.c checker_bonus/libft_file/ft_strdup_bonus.c checker_bonus/libft_file/ft_strjoin_bonus.c  checker_bonus/libft_file/ft_strlen_bonus.c \
 checker_bonus/libft_file/ft_strncmp_bonus.c checker_bonus/a_rules_bonus.c checker_bonus/b_rules_bonus.c  checker_bonus/checker_bonus.c checker_bonus/commonrules_bonus.c \
@@ -15,7 +13,7 @@ checker_bonus/parsing_bonus.c checker_bonus/readline_bonus.c  checker_bonus/util
 
 BJ_BONUS = $(BONUS_FILES:.c=.o)
 OBJFILES = $(FILES:.c=.o)
-HEADER = push_swap.h
+HEADER =  mandatory/push_swap.h
 
 %.o: %.c $(HEADER_BONUS)
 	@$(cc) $(FALGS) -c $< -o $@

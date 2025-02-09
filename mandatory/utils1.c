@@ -6,7 +6,7 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:10:11 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/08 22:42:55 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:26:38 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,18 @@ t_stack	*mark_position(t_stack *stack)
 		tmp = tmp->next;
 	}
 	return (stack);
+}
+
+void	rotate(t_stack **a)
+{
+	t_stack	*tmp;
+	t_stack	*last;
+
+	if (!a || !(*a) || !(*a)->next)
+		return ;
+	tmp = (*a);
+	(*a) = (*a)->next;
+	last = last_stack_b(*a);
+	last->next = tmp;
+	tmp->next = NULL;
 }

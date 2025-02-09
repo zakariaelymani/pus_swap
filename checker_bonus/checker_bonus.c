@@ -6,7 +6,7 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 10:40:26 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/09 16:47:06 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:50:44 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	is_sorted(t_stack *stack)
 	}
 	return (0);
 }
+
 int	check_moves(char *moves, t_stack **a, t_stack **b)
 {
 	if (ft_strncmp(moves, "sa\n", ft_strlen(moves)) == 0)
@@ -51,12 +52,20 @@ int	check_moves(char *moves, t_stack **a, t_stack **b)
 		rr_rules(a, b);
 	else if (ft_strncmp(moves, "rrr\n", ft_strlen(moves)) == 0)
 		rrr_rules(a, b);
-	else 
+	else
 		return (1);
 	return (0);
 }
 
-int main(int argc, char **argv)
+void	check_is_status(t_stack *a, t_stack *b)
+{
+	if (is_sorted(a) == 0 && !b)
+		ft_putstr_fd("OK\n", 1);
+	else
+		ft_putstr_fd("KO\n", 1);
+}
+
+int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
@@ -74,16 +83,12 @@ int main(int argc, char **argv)
 		if (!moves)
 			return (free_stack(a), 1);
 		if (!*moves)
-			break;
+			break ;
 		if (check_moves(moves, &a, &b) == 1)
-			(free(moves), free_stack(a), free_stack(b), ft_putstr_fd("Error\n", 2), exit(1));
+			(free(moves), free_stack(a), free_stack(b),
+				ft_putstr_fd("Error\n", 2), exit(1));
 		free(moves);
 	}
-	free(moves);
-	if (is_sorted(a) == 0 && !b)
-		ft_putstr_fd("OK\n", 1);
-	else
-		ft_putstr_fd("KO\n", 1);
-	free_stack(a);
-	free(b);
+	check_is_status(a, b);
+	(free(moves), free_stack(a), free(b));
 }

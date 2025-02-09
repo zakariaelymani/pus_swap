@@ -6,15 +6,15 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 10:27:25 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/09 18:03:34 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:25:43 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-int check_new_line(char *str)
+int	check_new_line(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -26,7 +26,7 @@ int check_new_line(char *str)
 	return (1);
 }
 
-char *mini_get_line()
+char	*mini_get_line(void)
 {
 	char	buffer[1820];
 	char	*joined;
@@ -43,9 +43,9 @@ char *mini_get_line()
 		if (!joined)
 			return (NULL);
 		if (check_new_line(joined) == 0)
-			break;
+			break ;
 		if (!*joined)
-			break;
+			break ;
 		free(tmp);
 	}
 	return (joined);

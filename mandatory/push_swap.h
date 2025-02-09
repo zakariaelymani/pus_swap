@@ -6,7 +6,7 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:09:38 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/09 16:11:59 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:18:10 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,5 @@ void	ss_rules(t_stack **a, t_stack **b);
 void	rr_rules(t_stack **a, t_stack **b);
 void	rrr_rules(t_stack **a, t_stack **b);
 t_stack	*last_stack_b(t_stack *stack);
+void	rotate(t_stack **a);
 #endif

@@ -6,20 +6,19 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 10:06:05 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/09 18:08:09 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:29:49 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_BONUS_H
-#define CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
-#include "unistd.h"
-#include "stdlib.h"
+# include "unistd.h"
+# include "stdlib.h"
 
 typedef struct s_stack
 {
 	int				index;
-	int				postion;
 	int				data;
 	struct s_stack	*next;
 }	t_stack;
@@ -46,7 +45,7 @@ char	*ft_strdup(const char *s1);
 char	**ft_split(char const *s, char c);
 int		ft_isdigit(int c);
 void	free_stack(t_stack *head);
-char	*mini_get_line();
+char	*mini_get_line(void);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ss_rules(t_stack **a, t_stack **b);
 void	rr_rules(t_stack **a, t_stack **b);

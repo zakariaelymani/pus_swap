@@ -6,7 +6,7 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/02/09 16:32:48 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:18:59 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,6 @@ void	function_calls(int argc, t_stack **a, t_stack **b)
 		sort_5elment(a, b);
 }
 
-void aa()
-{
-	system("leaks push_swap");
-}
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -35,7 +31,6 @@ int	main(int argc, char **argv)
 	int		i;
 	int		x;
 
-	// atexit(aa);
 	if (argc == 1)
 		return (1);
 	(1) && (a = NULL, b = NULL, i = 0, x = 0);

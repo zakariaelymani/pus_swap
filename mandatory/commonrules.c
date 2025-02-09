@@ -6,7 +6,7 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:09:16 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/09 16:12:29 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:18:19 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,10 @@ void	swap(t_stack **b)
 
 	if (!b || !(*b) || !(*b)->next)
 		return ;
-	
 	tmp = (*b)->next;
 	(*b)->next = tmp->next;
 	tmp->next = (*b);
 	(*b) = tmp;
-}
-void	rotate(t_stack **a)
-{
-	t_stack	*tmp;
-	t_stack	*last;
-
-	if (!a || !(*a) || !(*a)->next)
-		return ;
-	tmp = (*a);
-	(*a) = (*a)->next;
-	last = last_stack_b(*a);
-	last->next = tmp;
-	tmp->next = NULL;
 }
 
 void	reverse(t_stack **b)
