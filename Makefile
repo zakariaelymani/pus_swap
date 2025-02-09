@@ -26,7 +26,7 @@ HEADER = push_swap.h
 all: $(NAME)
 
 $(NAME): $(OBJFILES)
-	@$(cc) $(FALGS) $(OBJFILES) -o $(NAME)
+	$(cc) $(FALGS) $(OBJFILES) -o $(NAME)
 bonus: $(BONUS_PROGRAM)
 
 $(BONUS_PROGRAM): $(BJ_BONUS)

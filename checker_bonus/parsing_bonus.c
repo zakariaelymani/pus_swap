@@ -6,7 +6,7 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:09:24 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/09 16:36:02 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:10:48 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,24 +69,30 @@ long	*fill_array(char **splited, int len)
 	}
 	return (array);
 }
-
+void aa()
+{
+	system("leaks checker");
+}
 char	**join_and_splited(char **args)
 {
 	char	*joined;
 	char	**splited;
 	int		i;
 	char	*tmp;
+	char	*tmp1;
 
 	i = 1;
+	atexit(aa);
 	joined = NULL;
 	while (args[i])
 	{
-		free(joined);
+		tmp1 = joined;
 		if (args[i][0] == '\0')
 			(ft_putstr_fd("Error\n", 2), exit(1));
 		joined = ft_strjoin(joined, " ");
 		tmp = joined;
 		joined = ft_strjoin(joined, args[i]);
+		free(tmp1);
 		free(tmp);
 		i++;
 	}

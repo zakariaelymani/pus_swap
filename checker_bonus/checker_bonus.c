@@ -6,7 +6,7 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 10:40:26 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/09 16:33:58 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/09 16:47:06 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,13 @@ int	check_moves(char *moves, t_stack **a, t_stack **b)
 		return (1);
 	return (0);
 }
-void aa()
-{
-	system("leaks checker");
-}
+
 int main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
 	char	*moves;
 
-	atexit(aa);
 	(1) && (a = NULL, b = NULL);
 	if (argc == 1)
 		return (0);
