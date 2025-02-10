@@ -6,7 +6,7 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 10:06:05 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/09 18:29:49 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/10 10:14:55 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,5 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ss_rules(t_stack **a, t_stack **b);
 void	rr_rules(t_stack **a, t_stack **b);
 void	rrr_rules(t_stack **a, t_stack **b);
-t_stack	*fill_index(long *array, t_stack *a, int len);
 
 #endif

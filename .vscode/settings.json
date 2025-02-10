@@ -1,6 +1,8 @@
 {
 	"files.associations": {
 		"algorithm": "c",
-		"libft.h": "c"
+		"libft.h": "c",
+		"__tuple": "c",
+		"array": "c"
 	}
 }

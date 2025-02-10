@@ -6,7 +6,7 @@
 /*   By: zel-yama <zel-yama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:09:24 by zel-yama          #+#    #+#             */
-/*   Updated: 2025/02/09 18:25:59 by zel-yama         ###   ########.fr       */
+/*   Updated: 2025/02/10 09:58:38 by zel-yama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,6 @@ t_stack	*parsing(char **args)
 	a = fill_stack(array, len);
 	if (!a)
 		return (free(array), NULL);
-	a = fill_index(array, a, len);
 	free(array);
 	array = NULL;
 	return (a);

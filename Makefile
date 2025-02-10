@@ -1,7 +1,7 @@
 NAME = push_swap
 BONUS_PROGRAM = checker
 HEADER_BONUS = checker/checker_bonus.h 
-FALGS = -Wall -Wextra -Werror 
+FALGS = -Wall -Wextra -Werror -fsanitize=address
 cc = cc
 FILES = mandatory/a_rules.c mandatory/algorthim.c mandatory/b_rules.c mandatory/commonrules.c mandatory/parsing.c mandatory/push_swap.c  mandatory/sortsmallnumber.c mandatory/utils.c \
 mandatory/utils1.c mandatory/libft_file/ft_atoi.c mandatory/libft_file/ft_isalpha.c  mandatory/libft_file/ft_isdigit.c mandatory/libft_file/ft_putstr_fd.c mandatory/libft_file/ft_split.c \
@@ -24,7 +24,7 @@ HEADER =  mandatory/push_swap.h
 all: $(NAME)
 
 $(NAME): $(OBJFILES)
-	$(cc) $(FALGS) $(OBJFILES) -o $(NAME)
+	@$(cc) $(FALGS) $(OBJFILES) -o $(NAME)
 bonus: $(BONUS_PROGRAM)
 
 $(BONUS_PROGRAM): $(BJ_BONUS)
